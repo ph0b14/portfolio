@@ -1,3 +1,15 @@
+// ── Org logos (styled initials) ──────────────────────────────────────────────
+document.querySelectorAll(".org-logo").forEach(el => {
+  const name  = el.dataset.name  || "?";
+  const color = el.dataset.color || "#444";
+  el.style.background = color;
+  // Two lines if name has 2+ words, else up to 3 chars
+  const parts = name.trim().split(/\s+/);
+  el.textContent = parts.length >= 2
+    ? parts.slice(0, 2).map(w => w[0]).join("")
+    : name.slice(0, 3);
+});
+
 // ── Mobile nav ──────────────────────────────────────────────────────────────
 const hamburger = document.getElementById("hamburger");
 const navMobile = document.getElementById("nav-mobile");
