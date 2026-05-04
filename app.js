@@ -1,14 +1,34 @@
-// ── Org logos (styled initials) ──────────────────────────────────────────────
+// ── Org logos — Google favicon service with initials fallback ────────────────
 document.querySelectorAll(".org-logo").forEach(el => {
-  const name  = el.dataset.name  || "?";
-  const color = el.dataset.color || "#444";
+  const domain = el.dataset.domain;
+  const name   = el.dataset.name  || "?";
+  const color  = el.dataset.color || "#444";
+
+  if (domain) {
+    const img = document.createElement("img");
+    img.src   = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+    img.alt   = name;
+    img.style.cssText = "width:100%;height:100%;object-fit:contain;border-radius:6px;";
+    img.onerror = () => {
+      el.removeChild(img);
+      renderInitials(el, name, color);
+    };
+    el.style.background = "#fff";
+    el.style.padding    = "4px";
+    el.appendChild(img);
+  } else {
+    renderInitials(el, name, color);
+  }
+});
+
+function renderInitials(el, name, color) {
   el.style.background = color;
-  // Two lines if name has 2+ words, else up to 3 chars
+  el.style.padding    = "";
   const parts = name.trim().split(/\s+/);
   el.textContent = parts.length >= 2
     ? parts.slice(0, 2).map(w => w[0]).join("")
     : name.slice(0, 3);
-});
+}
 
 // ── Mobile nav ──────────────────────────────────────────────────────────────
 const hamburger = document.getElementById("hamburger");
