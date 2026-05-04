@@ -8,14 +8,29 @@
   --border:    #30363d;
   --text:      #e6edf3;
   --text-muted:#8b949e;
-  --accent:    #00ff88;
+  --accent:    #00cc6a;
   --accent2:   #00bcd4;
   --red:       #ff5555;
   --yellow:    #f0c060;
+  --nav-bg:    rgba(13,17,23,0.92);
+  --shadow:    0 24px 80px rgba(0,0,0,0.5);
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Consolas', monospace;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --radius:    8px;
   --max-w:     1100px;
+}
+
+[data-theme="light"] {
+  --bg:        #f6f8fa;
+  --bg2:       #ffffff;
+  --bg3:       #eaeef2;
+  --border:    #d0d7de;
+  --text:      #1f2328;
+  --text-muted:#57606a;
+  --accent:    #0a7c3e;
+  --accent2:   #0969da;
+  --nav-bg:    rgba(246,248,250,0.92);
+  --shadow:    0 24px 80px rgba(0,0,0,0.12);
 }
 
 html { scroll-behavior: smooth; }
@@ -36,7 +51,7 @@ a:hover { text-decoration: underline; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(13,17,23,0.92);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -84,6 +99,31 @@ a:hover { text-decoration: underline; }
 
 .nav-cta:hover { background: rgba(0,255,136,0.2) !important; }
 
+.theme-switcher {
+  display: flex;
+  gap: 2px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px;
+  margin-left: auto;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  line-height: 1;
+  transition: background 0.15s;
+  opacity: 0.5;
+}
+
+.theme-btn:hover { opacity: 0.8; }
+.theme-btn.active { background: var(--bg2); opacity: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+
 .hamburger {
   display: none;
   background: none;
@@ -91,7 +131,6 @@ a:hover { text-decoration: underline; }
   color: var(--text);
   font-size: 20px;
   cursor: pointer;
-  margin-left: auto;
 }
 
 .nav-mobile {
@@ -226,11 +265,11 @@ section:nth-child(even) { background: var(--bg2); }
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  box-shadow: var(--shadow);
 }
 
 .terminal-bar {
-  background: var(--bg3);
+  background: #1c2128;
   padding: 10px 14px;
   display: flex;
   gap: 6px;
@@ -251,7 +290,8 @@ section:nth-child(even) { background: var(--bg2); }
   font-size: 13px;
   line-height: 1.8;
   min-height: 240px;
-  color: var(--text);
+  color: #e6edf3;
+  background: #0d1117;
 }
 
 .t-line { display: block; }

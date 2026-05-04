@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pyae Heinn Kyaw — Cyber Incident Responder</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    (function(){
+      var p=localStorage.getItem("phk-theme")||"system";
+      var dark=p==="dark"||(p==="system"&&window.matchMedia("(prefers-color-scheme:dark)").matches);
+      document.documentElement.setAttribute("data-theme",dark?"dark":"light");
+    })();
+  </script>
 </head>
 <body>
 
@@ -22,6 +29,11 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
+      <div class="theme-switcher" id="theme-switcher">
+        <button class="theme-btn active" data-theme="dark" title="Dark">🌙</button>
+        <button class="theme-btn" data-theme="light" title="Light">☀️</button>
+        <button class="theme-btn" data-theme="system" title="System">💻</button>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
     </div>
     <ul class="nav-mobile hidden" id="nav-mobile">
@@ -89,7 +101,7 @@
           <div class="tl-dot"></div>
           <div class="tl-content">
             <div class="tl-header">
-              <div class="tl-logo-wrap"><div class="org-logo" data-name="Salesforce" data-color="#00a1e0" data-domain="trailhead.salesforce.com"></div></div>
+              <div class="tl-logo-wrap"><div class="org-logo" data-name="Salesforce" data-color="#00a1e0" data-domain="login.salesforce.com"></div></div>
               <div>
                 <p class="tl-role">Cyber Incident Responder, CSIRT</p>
                 <p class="tl-company">Salesforce &mdash; Melbourne, Australia</p>
@@ -185,7 +197,7 @@
           <div class="achieve-icon">⚔️</div>
           <p class="achieve-title">MITRE ATT&amp;CK Contributor</p>
           <p class="achieve-desc">Contributed T1546.018 — Event Triggered Execution: Python Startup Hooks.</p>
-          <span class="achieve-year">2025</span>
+          <a href="https://attack.mitre.org/techniques/T1546/018/" target="_blank" class="achieve-link">View Technique →</a>
         </div>
 
         <div class="achieve-card">
@@ -220,7 +232,7 @@
           <div class="achieve-icon">📋</div>
           <p class="achieve-title">Insider Threat Matrix Contributor</p>
           <p class="achieve-desc">Contributed AR5 and DT095 (Uninstalling Software).</p>
-          <span class="achieve-year">2024</span>
+          <a href="https://insiderthreatmatrix.org/articles/AR5/sections/AF016" target="_blank" class="achieve-link">View Contribution →</a>
         </div>
 
         <div class="achieve-card">

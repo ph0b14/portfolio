@@ -1,3 +1,30 @@
+// ── Theme switcher ────────────────────────────────────────────────────────────
+const THEME_KEY = "phk-theme";
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function applyTheme(pref) {
+  const isDark = pref === "dark" || (pref === "system" && systemDark.matches);
+  document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+  document.querySelectorAll(".theme-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.theme === pref);
+  });
+}
+
+const savedTheme = localStorage.getItem(THEME_KEY) || "system";
+applyTheme(savedTheme);
+
+document.getElementById("theme-switcher").addEventListener("click", e => {
+  const btn = e.target.closest(".theme-btn");
+  if (!btn) return;
+  const pref = btn.dataset.theme;
+  localStorage.setItem(THEME_KEY, pref);
+  applyTheme(pref);
+});
+
+systemDark.addEventListener("change", () => {
+  if ((localStorage.getItem(THEME_KEY) || "system") === "system") applyTheme("system");
+});
+
 // ── Org logos — Google favicon service with initials fallback ────────────────
 document.querySelectorAll(".org-logo").forEach(el => {
   const domain = el.dataset.domain;
