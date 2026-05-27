@@ -661,7 +661,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Make SANS coins larger to match GSP visual size */
 .sans-coin {
-  transform: scale(1.5);
+  transform: scale(1.6);
 }
 
 /* Make GSP smaller to match SANS coins */
