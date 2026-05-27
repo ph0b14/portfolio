@@ -65,6 +65,25 @@ document.querySelectorAll(".tl-org-logo, .cert-logo").forEach(el => {
   }
 });
 
+// ── Clean URL parameters (remove tracking params) ──────────────────────────
+if (window.location.search) {
+  const url = new URL(window.location.href);
+  const paramsToRemove = ['_gl', '_ga', '_ga_TT1ELNHWXP'];
+  let hasTracking = false;
+
+  paramsToRemove.forEach(param => {
+    if (url.searchParams.has(param)) {
+      hasTracking = true;
+    }
+  });
+
+  // Remove all tracking parameters
+  if (hasTracking) {
+    const cleanUrl = url.origin + url.pathname + url.hash;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
+}
+
 // ── Active nav on scroll ────────────────────────────────────────────────────
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".main-nav a, .mobile-nav a");
