@@ -141,21 +141,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .icon-btn {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--pri-color);
-  border: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  color: #fff;
-  transition: background 0.3s ease-out;
+  font-size: 15px;
+  transition: all 0.2s ease;
 }
 
-.icon-btn:hover { background: #0f1012; }
+.icon-btn:hover {
+  background: var(--wrap-color);
+  border-color: var(--pri-color);
+  transform: scale(1.05);
+}
+
+body.dark .icon-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark .icon-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #ff6b8a;
+}
 
 .hamburger {
   display: none;
