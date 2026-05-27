@@ -642,15 +642,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .achievement-visual {
   flex-shrink: 0;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--wrap-color);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  padding: 12px;
+  padding: 16px;
 }
 
 .coin-img {
@@ -659,39 +659,58 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
 }
 
-.achievement-badge {
-  background: linear-gradient(135deg, var(--pri-color) 0%, #a82347 100%);
-  border: 2px solid var(--pri-color);
+.gsp-visual {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 3px solid var(--pri-color);
 }
 
-.badge-content {
+.gsp-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   width: 100%;
   height: 100%;
 }
 
-.badge-icon {
-  font-size: 40px;
-  line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+.gsp-badge {
+  font-family: var(--headFont);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--pri-color);
+  letter-spacing: 4px;
+  text-shadow: 0 2px 8px rgba(140, 26, 56, 0.4);
 }
 
-.badge-label {
+.gsp-number {
   font-family: var(--headFont);
-  font-size: 13px;
+  font-size: 32px;
   font-weight: 700;
   color: #fff;
-  text-align: center;
-  line-height: 1.3;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
-body.dark .achievement-badge {
-  background: linear-gradient(135deg, var(--pri-color) 0%, #c52d4f 100%);
+.gsp-label {
+  font-family: var(--headFont);
+  font-size: 11px;
+  font-weight: 600;
+  color: #a0aec0;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  max-width: 150px;
+}
+
+body.dark .gsp-visual {
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+  border-color: #ff6b8a;
+}
+
+body.dark .gsp-badge {
+  color: #ff6b8a;
+  text-shadow: 0 2px 8px rgba(255, 107, 138, 0.4);
 }
 
 .achievement-content {
@@ -730,8 +749,8 @@ body.dark .achievement-badge {
   }
 
   .achievement-visual {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
   }
 }
 
