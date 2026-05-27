@@ -659,6 +659,11 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
 }
 
+/* Make SANS coins larger to match GSP visual size */
+.sans-coin {
+  transform: scale(1.4);
+}
+
 .gsp-visual {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   border: 3px solid var(--pri-color);
