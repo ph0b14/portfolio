@@ -650,7 +650,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--wrap-color);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  padding: 16px;
+  padding: 4px;
 }
 
 .coin-img {
