@@ -911,6 +911,7 @@ body.dark .cert-verify-btn:hover {
   font-size: 14px;
   font-weight: 700;
   color: var(--head-color);
+  white-space: nowrap;
 }
 
 .cert-count {
@@ -951,7 +952,7 @@ body.dark .cert-verify-btn:hover {
   display: inline-block;
 }
 
-.cert-num { font-size: 12px; color: var(--text-color); }
+.cert-num { font-size: 12px; font-weight: 400; color: var(--text-color); }
 
 /* ── EDUCATION ── */
 .edu-cols {
