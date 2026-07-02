@@ -954,6 +954,92 @@ body.dark .cert-verify-btn:hover {
 
 .cert-num { font-size: 12px; font-weight: 400; color: var(--text-color); }
 
+/* ── Cert badge grid (replaces cert-list) ── */
+.cert-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: default;
+}
+
+.cert-badge-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+}
+
+.cert-badge-item:hover > img {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.cert-badge-img-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 4px;
+}
+
+.cert-badge-img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.cert-badge-item:hover .cert-badge-img-wrap {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.cert-badge-num {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: var(--pri-color);
+  color: #fff;
+  font-family: var(--headFont);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.cert-tag-sm {
+  font-size: 10px;
+  width: 56px;
+  padding: 2px 0;
+}
+
+.cert-badge-in-progress > img,
+.cert-badge-in-progress .cert-badge-img-wrap {
+  opacity: 0.45;
+  filter: grayscale(25%);
+}
+
+.cert-in-progress-label {
+  font-family: var(--headFont);
+  font-size: 8px;
+  font-weight: 700;
+  color: #c0550a;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: 0.2px;
+}
+
+
 /* ── EDUCATION ── */
 .edu-cols {
   display: grid;
